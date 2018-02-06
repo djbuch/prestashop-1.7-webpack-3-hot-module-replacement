@@ -3,8 +3,8 @@ const mapObject = obj => fn => Object.keys(obj).map(key => fn(obj[key], key));
 module.exports = {
 	browserSyncPort: 3000, // The port on which the server browserSync will be launched
 	browserSyncOpen: false, // Auto open browserSync URL in browser
-	browserSyncTarget: "http://prestashop.local/", // URL of your server prestashop (example: "http://localhost:8080/ps/" or "http://remote-server.com")
-	themeFolderName: 'classic-demo-hot', // folder name your theme
+	browserSyncTarget: "http://boutiquenanou.code-utopia.com/", // URL of your server prestashop (example: "http://localhost:8080/ps/" or "http://remote-server.com")
+	themeFolderName: 'classic-hot-demo', // folder name your theme
 
 	outputFolderName: 'assets/js',
 	get publicPath(){
