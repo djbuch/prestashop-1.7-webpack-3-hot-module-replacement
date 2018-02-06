@@ -47,13 +47,5 @@ module.exports = {
 			},
 			hotMiddleware: {}
 		}),
-		new HardSourceWebpackPlugin({
-			cacheDirectory: `${resolve(__dirname, "../node_modules/.cache/hard-source/")}[confighash]`,
-			recordsPath: `${resolve(__dirname, "../node_modules/.cache/hard-source/")}[confighash]/records.json`,
-			configHash: require("node-object-hash")({ sort: false }).hash
-		}),
-		new BundleAnalyzerPlugin({
-			openAnalyzer: false
-		}),
 	]
 };
