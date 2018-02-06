@@ -10,6 +10,11 @@
     "author": "PrestaShop",
     "license": "AFL-3.0",
     "devDependencies": {
+        "@fortawesome/fontawesome": "^1.1.3",
+        "@fortawesome/fontawesome-free-brands": "^5.0.6",
+        "@fortawesome/fontawesome-free-light": "^5.0.6",
+        "@fortawesome/fontawesome-free-regular": "^5.0.6",
+        "@fortawesome/fontawesome-free-solid": "^5.0.6",
         "autoprefixer": "^6.7.7",
         "babel-core": "6",
         "babel-loader": "^7.1.2",
