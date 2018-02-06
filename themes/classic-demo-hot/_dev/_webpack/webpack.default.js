@@ -3,6 +3,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const {DEV, outputFolderName} = require('./util.js');
 
 let config = {
+  devtool: DEV ? 'cheap-module-inline-source-map' : 'source-map',
   entry: {
     main: [
       './js/theme.js',
@@ -27,16 +28,27 @@ let config = {
             {
               loader: 'css-loader',
               options: {
-                minimize: !DEV
+                minimize: !DEV,
+                sourceMap : DEV
               }
             },
-            'postcss-loader',
-            'sass-loader'
+              {
+                  loader: 'postcss-loader',
+                  options: {
+                      sourceMap: DEV
+                  }
+              },
+              {
+                  loader: 'sass-loader',
+                  options: {
+                      sourceMap: DEV
+                  }
+              }
           ]
         })
       },
       {
-        test: /.(png|woff(2)?|eot|ttf|svg)(\?[a-z0-9=\.]+)?$/,
+        test: /.(png|woff(2)?|eot|ttf|svg|jp(e)?g)(\?[a-z0-9=\.]+)?$/,
         use: [
           {
             loader: 'file-loader',
@@ -48,7 +60,13 @@ let config = {
       },
       {
         test : /\.css$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader']
+        use: ['style-loader', {
+            loader: 'css-loader',
+            options: {
+                sourceMap: true,
+                importLoaders: 1
+            }
+        }, 'postcss-loader']
       }
     ]
   },
